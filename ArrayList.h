@@ -14,6 +14,9 @@ public:
         array = new T[1];
     }
 
+    /*
+        Add value to end of ArrayList
+    */
     void add(T value)
     {
         sizeOf++;
@@ -28,7 +31,7 @@ public:
     }
 
     /*
-        Remove from array by index
+        Remove value from ArrayList at index
     */
     void remove(unsigned index)
     {
@@ -53,10 +56,12 @@ public:
         else
         {
             throw std::runtime_error("Index out of bounds index " + std::to_string(index) + " not in range: " + std::to_string(sizeOf - 1));
-            // throw an error for out of bounds
         }
     }
 
+    /*
+        Get value at array list index
+    */
     T get(unsigned index)
     {
         if (index < sizeOf)
@@ -66,11 +71,13 @@ public:
         else
         {
             throw std::runtime_error("Index out of bounds index " + std::to_string(index) + " not in range: " + std::to_string(sizeOf - 1));
-            // throw error for out of bounds
         }
     }
 
-    int size()
+    /*
+        Get the amount of elements stored in the ArrayList
+    */
+    int count()
     {
         return sizeOf;
     }
